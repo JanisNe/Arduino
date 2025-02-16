@@ -17,7 +17,7 @@
     <div class="user-container">
         {% for room in rooms %}
         <div class="room-card">
-            <img src="{{ MEDIA_URL }}images/room.jpg" alt="Room Image">
+            <img src="{{ MEDIA_URL }}/room.jpg" alt="Room Image">
             <h3>{{ room.room }}</h3>
             {% with data=room.reverse.0 %} 
                 {% if data %}
