@@ -1,0 +1,34 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+{% block context %}
+<style>
+    body {
+        background-image: url("{{ MEDIA_URL }}linesvg.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+        opacity: 1;
+        z-index: -1;
+    }
+</style>
+<img src="{{ MEDIA_URL }}homesvg.svg" id="svg" width="200" height="100" alt="svg">
+    <div class="user-container">
+        {% for room in rooms %}
+        <div class="room-card">
+            <img src="{{ MEDIA_URL }}images/room.jpg" alt="Room Image">
+            <h3>{{ room.room }}</h3>
+            {% with data=room.reverse.0 %} 
+                {% if data %}
+                    <p>🌡️ Temperatura: {{ data.temperature }}°C</p>
+                    <p>💧 Mitrus: {{ data.humidity }}%</p>
+                    <p>📅 Datums/Laiks: {{ data.created_at|date:"m-d H:i:s" }}</p>
+                {% else %}
+                    <p>No data available</p>
+                {% endif %}
+            {% endwith %}
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

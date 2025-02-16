@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TempCheck</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href ="{% static 'css/style.css' %}" rel="stylesheet"/>
+        <script src="{% static 'js/script.js' %}"></script>
+    </head>
+    <body>
+        {% block context %}
+        {% endblock %}
+    </body>
+</html>
