@@ -2,8 +2,8 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-const char* ssid = "B535_C218";
-const char* password = "paulshd1";
+const char* ssid = "BV5900";
+const char* password = "123456789";
 
 #define DHTPIN 4
 #define DHTTYPE DHT11
@@ -11,7 +11,7 @@ DHT dht(DHTPIN, DHTTYPE);
 
 // Telpas numurs nevar izmantot " " vai / zīmes
 String room = "JanisNea";
-String serverName = "http://192.168.8.100:8000/";
+String serverName = "https://janisneaa.pythonanywhere.com/";
 
 unsigned long lastTime = 0;
 unsigned long timerDelay = 10000;
